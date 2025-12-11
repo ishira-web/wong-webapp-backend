@@ -1,0 +1,27 @@
+[Unit]
+Description=HR Backend API
+Documentation=https://github.com/yourorg/hr-backend
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/hr-backend
+Environment=NODE_ENV=production
+EnvironmentFile=/var/www/hr-backend/.env
+ExecStart=/usr/bin/node /var/www/hr-backend/dist/index.js
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=hr-backend
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/www/hr-backend/logs
+
+[Install]
+WantedBy=multi-user.target
