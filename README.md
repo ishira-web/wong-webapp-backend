@@ -696,4 +696,5 @@ MIT
 
 For issues and questions:
 - GitHub Issues: https://github.com/yourorg/hr-backend/issues
-- Email: support@hrmanagement.com
+- Email: ishirapahasara02@proton.me
+
